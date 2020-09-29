@@ -225,19 +225,19 @@ class GzmodelspawnRunner(Runner):
             workspace_dir + "/Tools/sitl_gazebo/models"
         self.cmd = "gz"
 
-        if os.path.isfile("workspace_dir +
-                     "/Tools/sitl_gazebo/models/" +
+        if os.path.isfile(workspace_dir + \
+                     "/Tools/sitl_gazebo/models/" + \
                      self.model + "/" + self.model + ".sdf"):
-            model_path = "workspace_dir +
-                     "/Tools/sitl_gazebo/models/" +
+            model_path = workspace_dir + \
+                     "/Tools/sitl_gazebo/models/" + \
                      self.model + "/" + self.model + ".sdf"
-        elif os.path.isfile("workspace_dir +
-                     "/Tools/sitl_gazebo/models/" +
+        elif os.path.isfile(workspace_dir + \
+                     "/Tools/sitl_gazebo/models/" + \
                      self.model + "/" + self.model + "-gen.sdf"):
-            model_path = "workspace_dir +
-                     "/Tools/sitl_gazebo/models/" +
+            model_path = workspace_dir + \
+                     "/Tools/sitl_gazebo/models/" + \
                      self.model + "/" + self.model + "-gen.sdf"
-        else
+        else:
             raise Exception("Model not found")
 
         self.args = ["model", "--spawn-file", model_path,
